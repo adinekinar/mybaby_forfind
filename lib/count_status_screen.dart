@@ -227,14 +227,17 @@ class _CountStatusScreenState extends State<CountStatusScreen> {
                     theData["bbpb"] = bbpb;
                     theData["zsbbpb"] = widget.babyZSbbpb;
                     postModel();
-                    alergicFunc();
-                    print(resultRecom);
-                    UserPrefState.setRekomendasiSusu(recom[resultRecom].name);
+                    print(widget.babyZSpbu);
+                    print(widget.babyZSbbu);
+                    print(widget.babyZSbbpb);
                     UserPrefState.setRekomendasiBBU(weightCtr.text);
                     UserPrefState.setRekomendasiPBU(heightCtr.text);
                     UserPrefState.setRekomendasiBBPB(weightBasedOnHeightCtr.text);
-                    UserPrefState.setIndexRekomendasi(resultRecom);
-                    Future.delayed(Duration(seconds: 2), (){
+                    Future.delayed(Duration(seconds: 3), (){
+                      alergicFunc();
+                      print(resultRecom);
+                      UserPrefState.setRekomendasiSusu(recom[resultRecom].name);
+                      UserPrefState.setIndexRekomendasi(resultRecom);
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) =>
