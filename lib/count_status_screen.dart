@@ -51,7 +51,7 @@ class _CountStatusScreenState extends State<CountStatusScreen> {
   final heightCtr = TextEditingController();
   final weightBasedOnHeightCtr = TextEditingController();
   final alergyCtr = TextEditingController();
-  final apiURL = "http://10.0.2.2:8000";
+  final apiURL = "https://xgboost-api-deta.et.r.appspot.com/";
 
   String dropvalue = dropdown.first;
 
@@ -233,7 +233,7 @@ class _CountStatusScreenState extends State<CountStatusScreen> {
                     UserPrefState.setRekomendasiBBU(weightCtr.text);
                     UserPrefState.setRekomendasiPBU(heightCtr.text);
                     UserPrefState.setRekomendasiBBPB(weightBasedOnHeightCtr.text);
-                    Future.delayed(Duration(seconds: 3), (){
+                    Future.delayed(Duration(seconds: 5), (){
                       alergicFunc();
                       print(resultRecom);
                       UserPrefState.setRekomendasiSusu(recom[resultRecom].name);
