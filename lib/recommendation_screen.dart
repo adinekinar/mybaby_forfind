@@ -88,7 +88,13 @@ class RecommendationScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 11),
-                    Text(recom[index].listrecom)
+                    Text(recom[index].listrecom),
+                    const SizedBox(height : 11),
+                    RichText(text: TextSpan(text: "*", style: TextStyle(color: Colors.red, fontSize: 12),
+                      children: <TextSpan>[
+                        TextSpan(text: 'Penting untuk selalu mengikuti aturan & petunjuk yang diberikan oleh dokter.', style: TextStyle(color: Colors.black)),
+                      ]
+                    )),
                   ],
                 ),
               ),
